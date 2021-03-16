@@ -8,8 +8,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import sample.models.User;
+import sample.services.LoginService;
 
 public class MainController {
+
+    private LoginService loginService = LoginService.INSRANCE;
 
     double x = 0;
     double y = 0;
@@ -44,7 +48,11 @@ public class MainController {
     void onBtnEnterClicked(ActionEvent event) {
         String login = txtLogin.getText();
         String password = txtPassword.getText();
-        System.out.println(login + " " + password);
+
+        User user = new User(login, password);  //Чтобы в классе User не добавилось параметры,
+        loginService.auth(user);
+
+        //System.out.println(login + " " + password);
 
     }
 
