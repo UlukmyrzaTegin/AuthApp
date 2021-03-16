@@ -15,6 +15,7 @@ import java.util.Optional;
 
 public class RegistrationController {
 
+
     @FXML
     private TextField txtName;
 
@@ -39,7 +40,7 @@ public class RegistrationController {
         if (event.getSource().equals(btnSave)) {
             System.out.println("Сохранен");
             ButtonType buttonTypeOk = new ButtonType("Да");
-            Alert alert = new Alert(AlertType.CONFIRMATION, "Все данные верны ?", buttonTypeOk, ButtonType.CANCEL);
+            Alert alert = new Alert(AlertType.CONFIRMATION, "Вы хотите сохранить?", buttonTypeOk, ButtonType.CANCEL);
             alert.setTitle(null);
             alert.setHeaderText(null);
             Optional<ButtonType> buttonType = alert.showAndWait();
