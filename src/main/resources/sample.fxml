@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.MainController">
     <children>
         <VBox layoutX="109.0" layoutY="326.0" prefHeight="69.0" prefWidth="300.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0">
             <children>
@@ -22,7 +22,7 @@
                         <Insets top="13.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                        <TextField fx:id="txtLogin" promptText="Имя пользователя" style="-fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent; -fx-border-color: white;" HBox.hgrow="ALWAYS">
+                        <TextField fx:id="txtLogin" promptText="Имя пользователя" style="-fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent; -fx-border-color: white; -fx-prompt-text-fill: white; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
@@ -46,7 +46,7 @@
                      </HBox.margin>
                   </FontAwesomeIconView>
 
-                        <PasswordField fx:id="txtPassword" promptText="Пароль" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" HBox.hgrow="ALWAYS">
+                        <PasswordField fx:id="txtPassword" promptText="Пароль" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px; -fx-prompt-text-fill: white; -fx-text-fill: white;" HBox.hgrow="ALWAYS">
                             <HBox.margin>
                                 <Insets right="5.0" top="5.0" />
                             </HBox.margin>
@@ -65,12 +65,12 @@
                 <ButtonBar prefHeight="6.0" prefWidth="300.0" />
             </children>
         </VBox>
-            <Button fx:id="btnEnter" alignment="TOP_RIGHT" contentDisplay="CENTER" defaultButton="true" layoutX="276.0" layoutY="408.0" minWidth="65.0" mnemonicParsing="false" onAction="#onBtnClicked" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #03a9f4; -fx-background-radius: 100; -fx-font-weight: boid;" text="Войти" textFill="WHITE" AnchorPane.bottomAnchor="109.0" AnchorPane.topAnchor="408.0">
+            <Button fx:id="btnEnter" alignment="TOP_RIGHT" contentDisplay="CENTER" defaultButton="true" layoutX="276.0" layoutY="408.0" minWidth="65.0" mnemonicParsing="false" onAction="#onBtnEnterClicked" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #03a9f4; -fx-background-radius: 100; -fx-font-weight: boid;" text="Войти" textFill="WHITE" AnchorPane.bottomAnchor="109.0" AnchorPane.topAnchor="408.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-            <Button fx:id="btnCancel" alignment="TOP_RIGHT" cancelButton="true" contentDisplay="CENTER" layoutX="372.0" layoutY="408.0" minWidth="65.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #03a9f4; -fx-background-radius: 100; -fx-font-weight: boid;" text="Отмена" textFill="WHITE" AnchorPane.bottomAnchor="109.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="408.0">
+            <Button fx:id="btnCancel" alignment="TOP_RIGHT" cancelButton="true" contentDisplay="CENTER" layoutX="372.0" layoutY="408.0" minWidth="65.0" mnemonicParsing="false" onAction="#onBtnCancelClicked" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #03a9f4; -fx-background-radius: 100; -fx-font-weight: boid;" text="Отмена" textFill="WHITE" AnchorPane.bottomAnchor="109.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="408.0">
          <font>
             <Font size="14.0" />
          </font>
