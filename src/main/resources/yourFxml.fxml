@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane prefHeight="200.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.YourController">
+    <VBox layoutX="8.0" layoutY="14.0" prefHeight="99.0" prefWidth="322.0">
+        <Button fx:id="fxButton" onAction="#click" text="clickMe" />
+      <Label fx:id="localLabel" layoutX="10.0" layoutY="35.0" minHeight="17.0" minWidth="185.0" text="label" />
+        <Label fx:id="labelFx" minHeight="17.0" minWidth="185.0" text="label" />
+    </VBox>
+</Pane>
