@@ -1,5 +1,8 @@
 package sample.models;
 
+import sample.exceptions.IncorrectLogin;
+import sample.exceptions.IncorrectPassword;
+
 /**
  * TheSusanin
  * 16 март 2021
@@ -15,7 +18,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String login, String password) {
+    public User(String login, String password) throws IncorrectLogin, IncorrectPassword {  //Конструктор вернет IncorrectLogin, IncorrectPassword
        setLogin(login);  //вызов метода
        setPassword(password);
     }
@@ -32,9 +35,9 @@ public class User {
         return login;
     }
 
-    public void setLogin(String login){ // throws Exception - выброшу ошибку
+    public void setLogin(String login) throws IncorrectLogin { // throws Exception - выброшу ошибку
         if (login.isEmpty() || login.length() < 5)
-            throw new RuntimeException("Неверное значение для поле логин");
+            throw new IncorrectLogin("Неверное значение для поле логин");
         this.login = login;
     }
 
@@ -42,9 +45,9 @@ public class User {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) throws IncorrectPassword {
         if (password.length() < 5)
-            throw new RuntimeException("Пароль не должен меньше пяти цифр!");
+            throw new IncorrectPassword("Пароль не должен меньше пяти цифр!");
         this.password = password;
     }
 }

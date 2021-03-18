@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.exceptions.IncorrectLogin;
+import sample.exceptions.IncorrectLoginAndPassword;
 import sample.exceptions.IncorrectPassword;
 import sample.models.User;
 import sample.services.LoginService;
@@ -60,7 +61,22 @@ public class MainController {
         }*/
 
         System.out.println(Crypto.getEncodedStringAlg1(txtLogin.getText(), txtPassword.getText()));
-        
+
+        //блок служит для работой Exception
+        try {
+            User user = new User(login, password);
+            loginService.auth(user);
+        } catch (IncorrectLogin incorrectLogin) {
+            incorrectLogin.printStackTrace();
+        } catch (IncorrectPassword incorrectPassword) {
+            incorrectPassword.printStackTrace();
+        } catch (IncorrectLoginAndPassword incorrectLoginAndPassword) {
+            //incorrectLoginAndPassword.printStackTrace(); // add cach
+            txtLogin.setText(null);
+            txtPassword.setText(null);
+        }
+
+ /*       блок служит для работой RuntimeException
        try {
             User user = new User(login, password);  //Чтобы в классе User не добавилось параметры,
             loginService.auth(user);
@@ -71,9 +87,9 @@ public class MainController {
             txtPassword.setText(null);
             txtPassword.setPromptText("Неверный пароль!");
         } catch (RuntimeException ex) {
-            System.out.println("Системная ошибка");                               
+            System.out.println("Системная ошибка");
         }
-
+*/
        // System.out.println(login + " " + password);
        // printStackTrace - вывод на консоль стека трассировки ошибки в классе Exception.
        // Блок finally выполняется в любом случае, возникло ли исключение в блоке try или нет:
