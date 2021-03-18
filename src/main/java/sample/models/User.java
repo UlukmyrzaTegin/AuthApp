@@ -32,9 +32,9 @@ public class User {
         return login;
     }
 
-    public void setLogin(String login) {
-        if (login.length() < 5)
-            throw new RuntimeException("Логин не должен меньше пяти букв!");
+    public void setLogin(String login){ // throws Exception - выброшу ошибку
+        if (login.isEmpty() || login.length() < 5)
+            throw new RuntimeException("Неверное значение для поле логин");
         this.login = login;
     }
 
@@ -43,6 +43,8 @@ public class User {
     }
 
     public void setPassword(String password) {
+        if (password.length() < 5)
+            throw new RuntimeException("Пароль не должен меньше пяти цифр!");
         this.password = password;
     }
 }
