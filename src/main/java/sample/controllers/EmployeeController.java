@@ -50,6 +50,7 @@ public class EmployeeController {
         int  age = Integer.parseInt(txtAge.getText());
         double salary = Double.parseDouble(txtSalary.getText());
 
+    /*  блок служит для Exception
         try {
             Employee employee = new Employee(surname, name, age, salary);
         } catch (IncorrectSalary incorrectSalary) {
@@ -60,9 +61,10 @@ public class EmployeeController {
             incorrectAge.printStackTrace();
         } catch (IncorrectSurname incorrectSurname) {
             incorrectSurname.printStackTrace();
-        }
+        }*/
 
-     /*   try {
+        // блок служит для RuntimeException
+        try {
             Employee employee = new Employee(surname, name, age, salary);
         } catch (IncorrectSurname ex) {
             txtSurname.setText(null);
@@ -76,7 +78,7 @@ public class EmployeeController {
         } catch (IncorrectSalary ex) {
             txtSalary.setText(null);
             txtSalary.setPromptText("ЗП не должен отрицательным");
-        }*/
+        }
 
     }
 

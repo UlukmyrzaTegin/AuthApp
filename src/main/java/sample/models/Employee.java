@@ -26,7 +26,7 @@ public class Employee {
         this.position = position;
     }
 
-    public Employee(String surname, String name, int age, double salary)  throws IncorrectSurname, IncorrectName, IncorrectAge, IncorrectSalary {
+    public Employee(String surname, String name, int age, double salary) { //}  throws IncorrectSurname, IncorrectName, IncorrectAge, IncorrectSalary {
         setSurname(surname);
         setName(name);
         setAge(age);
@@ -38,7 +38,7 @@ public class Employee {
         return surname;
     }
 
-    public void setSurname(String surname)  throws IncorrectSurname {
+    public void setSurname(String surname) { //}  throws IncorrectSurname {
         if (surname.isEmpty())
             throw new IncorrectSurname("Неверное значение для поле фамилия!");
         this.surname = surname;
@@ -48,7 +48,7 @@ public class Employee {
         return name;
     }
 
-    public void setName(String name)  throws IncorrectName {
+    public void setName(String name) { //}  throws IncorrectName {
         if (name.isEmpty())
             throw new IncorrectName("Неверное значение для поле имя!");
         this.name = name;
@@ -66,7 +66,7 @@ public class Employee {
         return age;
     }
 
-    public void setAge(int age)  throws IncorrectAge {
+    public void setAge(int age) { //}  throws IncorrectAge {
         if (age < 18 )
             throw new IncorrectAge("Возраст должен быть не менее 18!");
         else if (age > 65)
@@ -78,7 +78,7 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(double salary) throws IncorrectSalary {
+    public void setSalary(double salary) { // throws IncorrectSalary {
         if (salary < 0)
             throw new IncorrectSalary("Зарплата сотрудника не должен быть отрицательным числом");
         this.salary = salary;
