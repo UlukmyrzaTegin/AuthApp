@@ -7,6 +7,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.exceptions.IncorrectFirstNameField;
 import sample.models.Person;
 import sample.util.DateUtil;
 
@@ -82,6 +83,12 @@ public class PersonEditDialogController {
 
     private boolean isInputValid() {
         String errorMessage = "";
+/*
+        try {
+
+        } catch (IncorrectFirstNameField ex) {
+
+        }*/
         if (this.firstNameField.getText() == null || this.firstNameField.getText().length() == 0) {
             errorMessage = errorMessage + "Не заполнен поле фамилия!\n";
         }

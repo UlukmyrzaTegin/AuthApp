@@ -1,6 +1,7 @@
 package sample.models;
 
 import javafx.beans.property.*;
+import sample.exceptions.IncorrectFirstNameField;
 import sample.util.DateUtil;
 import sample.util.LocalDateAdapter;
 
@@ -41,6 +42,8 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
+        if (firstName == null || firstName.length() == 0)
+            throw new IncorrectFirstNameField("Не заполнен поле фамилия");
         this.firstName.set(firstName);
     }
 
